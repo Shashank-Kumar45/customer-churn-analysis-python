@@ -1,56 +1,22 @@
-# 📉 Customer Churn Analysis
+# 📉 Customer Churn Analysis using Python
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat&logo=python)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=flat&logo=pandas)
-![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-4C72B0?style=flat)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-Plots-11557c?style=flat)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=flat)
+> Exploratory Data Analysis (EDA) on the Telco Customer Churn dataset to identify patterns and key factors driving customer attrition.
 
-> **Exploratory Data Analysis (EDA)** on the Telco Customer Churn dataset to uncover patterns and key drivers behind customer attrition.
+---
+
+⭐ If you like this project, consider giving it a star!
 
 ---
 
 ## 📌 Project Overview
 
-Customer churn is one of the biggest challenges in the telecom industry. This project dives deep into the **IBM Telco Customer Churn dataset** to understand *why* customers leave — and what characteristics they share.
-
-Using Python-based EDA, this analysis identifies behavioral patterns, high-risk customer segments, and actionable insights that could guide retention strategies.
-
----
-
-## ✨ Features
-
-- 🧹 **Data Cleaning & Preprocessing** — handled missing values, fixed data types, and prepared the dataset for analysis
-- 📊 **Exploratory Data Analysis (EDA)** — univariate, bivariate, and multivariate analysis
-- 🎨 **Data Visualization** — rich charts using Seaborn & Matplotlib
-- 🔥 **Correlation Heatmap** — identified relationships between features
-- 🔎 **Outlier Detection** — using both Z-Score and IQR methods
-- 👤 **Customer Behavior Analysis** — across tenure, contract type, services used, and payment method
-
----
-
-## 💡 Key Insights
-
-| # | Insight |
-|---|---------|
-| 1 | 📅 **Month-to-month** contract customers have the highest churn rate |
-| 2 | 👴 **Senior citizens** are more likely to churn than younger customers |
-| 3 | ⏳ Customers with **low tenure** (new customers) churn significantly more |
-| 4 | 🛡️ Customers subscribed to **value-added services** (e.g., tech support, online backup) show lower churn |
-| 5 | 💳 **Electronic check** users exhibit higher churn compared to other payment methods |
-
----
-
-## 🛠️ Tech Stack
-
-| Tool | Purpose |
-|------|---------|
-| **Python** | Core programming language |
-| **Pandas** | Data manipulation & analysis |
-| **NumPy** | Numerical computations |
-| **Matplotlib** | Base plotting library |
-| **Seaborn** | Statistical data visualization |
-| **SciPy** | Z-score based outlier detection |
+| Item | Detail |
+|------|--------|
+| **Dataset** | IBM Telco Customer Churn — Kaggle |
+| **Records** | 7,043 customers |
+| **Features Analyzed** | 21 (demographics, services, billing, churn) |
+| **Techniques Used** | EDA, Data Visualization, Outlier Detection |
+| **Libraries** | Pandas, NumPy, Matplotlib, Seaborn, SciPy |
 
 ---
 
@@ -59,15 +25,52 @@ Using Python-based EDA, this analysis identifies behavioral patterns, high-risk 
 ```
 customer-churn-analysis-python/
 │
-├── main.py                  # Main analysis script
-├── requirements.txt         # Project dependencies
-├── data/                    # Dataset files
+├── main.py                        # Main analysis script
+├── requirements.txt               # Project dependencies
+├── README.md                      # Project documentation
+├── .gitignore                     # Ignore unnecessary files
+│
+├── data/                          # Dataset files
 │   └── telco_churn.csv
-└── plots/                   # Generated visualizations
+│
+└── plot/                          # Generated visualizations
     ├── churn_count.png
-    ├── correlation_heatmap.png
-    └── ...
+    ├── churn_percentage.png
+    ├── churn_gender.png
+    ├── churn_senior.png
+    ├── seniorcitizen_percentage.png
+    ├── contract_churn.png
+    ├── payment_method.png
+    ├── services_analysis.png
+    ├── tenure_hist.png
+    ├── boxplot_MonthlyCharges.png
+    ├── boxplot_tenure.png
+    ├── boxplot_TotalCharges.png
+    └── correlation_heatmap.png
 ```
+
+---
+
+## ✨ Key Features
+
+- 🧹 **Data Cleaning & Preprocessing** — handled missing values, corrected data types, removed inconsistencies
+- 📊 **Exploratory Data Analysis (EDA)** — univariate, bivariate, and multivariate analysis
+- 🎨 **Data Visualization** — 13 rich plots using Seaborn & Matplotlib
+- 🔥 **Correlation Heatmap** — identified feature relationships and multicollinearity
+- 🔎 **Outlier Detection** — using both Z-Score and IQR methods
+- 👤 **Customer Behavior Analysis** — across tenure, contract type, services, and payment method
+
+---
+
+## 💡 Key Insights
+
+| # | Insight |
+|---|---------|
+| 1 | 📅 **Month-to-month** contract customers churn the most |
+| 2 | 👴 **Senior citizens** have a significantly higher churn rate |
+| 3 | ⏳ Customers with **low tenure** (new customers) are most likely to leave |
+| 4 | 🛡️ **Value-added services** (tech support, online backup) reduce churn |
+| 5 | 💳 **Electronic check** users show higher churn than other payment methods |
 
 ---
 
@@ -76,73 +79,84 @@ customer-churn-analysis-python/
 ### 📈 Churn Overview
 | | |
 |---|---|
-| ![Churn Count](plots/churn_count.png) | ![Churn Percentage](plots/churn_percentage.png) |
+| ![Churn Count](plot/churn_count.png) | ![Churn Percentage](plot/churn_percentage.png) |
 
 ### 👤 Customer Demographics
 | | |
 |---|---|
-| ![Churn by Gender](plots/churn_gender.png) | ![Churn by Senior Citizen](plots/churn_senior.png) |
-| ![Senior Citizen %](plots/seniorcitizen_percentage.png) | |
+| ![Churn by Gender](plot/churn_gender.png) | ![Churn by Senior Citizen](plot/churn_senior.png) |
+| ![Senior Citizen %](plot/seniorcitizen_percentage.png) | |
 
 ### 📋 Contract & Payment
 | | |
 |---|---|
-| ![Contract Churn](plots/contract_churn.png) | ![Payment Method](plots/payment_method.png) |
+| ![Contract Churn](plot/contract_churn.png) | ![Payment Method](plot/payment_method.png) |
 
 ### 🛠️ Services & Tenure
 | | |
 |---|---|
-| ![Services Analysis](plots/services_analysis.png) | ![Tenure Distribution](plots/tenure_hist.png) |
+| ![Services Analysis](plot/services_analysis.png) | ![Tenure Distribution](plot/tenure_hist.png) |
 
 ### 📦 Outlier Detection (Boxplots)
 | | | |
 |---|---|---|
-| ![Monthly Charges](plots/boxplot_MonthlyCharges.png) | ![Tenure](plots/boxplot_tenure.png) | ![Total Charges](plots/boxplot_TotalCharges.png) |
+| ![Monthly Charges](plot/boxplot_MonthlyCharges.png) | ![Tenure](plot/boxplot_tenure.png) | ![Total Charges](plot/boxplot_TotalCharges.png) |
 
 ### 🔥 Correlation Heatmap
-![Correlation Heatmap](plots/correlation_heatmap.png)
+![Correlation Heatmap](plot/correlation_heatmap.png)
 
 ---
 
-## ⚙️ Installation & How to Run
+## 🛠️ Tech Stack
 
-**1. Clone the repository**
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas)
+![NumPy](https://img.shields.io/badge/NumPy-Numerical-013243?logo=numpy)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557c)
+![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-4C72B0)
+![SciPy](https://img.shields.io/badge/SciPy-Statistics-8CAAE6?logo=scipy)
+
+---
+
+## 🚀 How to Run
+
 ```bash
-git clone https://github.com/your-username/customer-churn-analysis-python.git
+# 1. Clone the repository
+git clone https://github.com/Shashank-Kumar45/customer-churn-analysis-python.git
+
+# 2. Navigate into the folder
 cd customer-churn-analysis-python
-```
 
-**2. Install dependencies**
-```bash
+# 3. Install required libraries
 pip install -r requirements.txt
-```
 
-**3. Run the analysis**
-```bash
+# 4. Run the analysis
 python main.py
 ```
 
-> 📌 Generated plots will be saved in the `plots/` directory.
+> 📌 All generated plots will be saved automatically in the `plot/` directory.
 
 ---
 
-## 🚀 Future Improvements
+## 🔮 Future Scope
 
 - [ ] Build a **churn prediction model** using Logistic Regression or Random Forest
+- [ ] Handle class imbalance using **SMOTE**
 - [ ] Add an **interactive dashboard** using Plotly or Streamlit
 - [ ] Perform **feature engineering** to improve predictive power
-- [ ] Include **customer segmentation** using clustering (K-Means)
-- [ ] Deploy the model as a **REST API**
+- [ ] Include **customer segmentation** using K-Means clustering
+- [ ] Deploy the model as a **web app** using Flask or Streamlit
 
 ---
 
-## 👨‍💻 Author
+## 👤 Author
 
 **Shashank Kumar**
-
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=flat&logo=github)](https://github.com/your-username/customer-churn-analysis-python)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/your-profile)
+B.Tech CSE
+📧 Connect on [LinkedIn](https://www.linkedin.com/in/shashank-kumar02/)
 
 ---
 
-> ⭐ *If you found this project helpful, consider giving it a star on GitHub!*
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
